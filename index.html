@@ -247,7 +247,7 @@
             </div>
             <div class="final-heart-glow">💖</div>
             <div class="final-msg">
-                Shivangi, my beautiful Queen👑❤️...<br><br>
+                Shivangi, my beautiful Queen👑❤️s...<br><br>
                 Thank you for being in my life. I know I have made mistakes, but please know that
                 <strong>you are the only one I want</strong> beside me, now and forever.<br><br>
                 I promise to love you better, to cherish you more, and to never let you go.
@@ -318,7 +318,7 @@
         }
 
         // === PASSCODE ===
-        const PASS = '1234'; // ← CHANGE THIS to your actual passcode
+        const PASS = '1208'; // ← CHANGE THIS to your actual passcode
         let entered = '';
         function pressKey(k) {
             if (entered.length >= 4) return;
@@ -340,6 +340,7 @@
                     initThreeJS();
                     animateIntro();
                     startFloatingHearts();
+                    if (!musicPlaying) toggleMusic(); // Auto-play music on unlock
                 }, 300);
             } else {
                 const card = document.getElementById('lock-card');
@@ -508,6 +509,42 @@
             const canvas = document.getElementById('three-canvas');
             if (canvas) canvas.style.transform = `translateY(${y * .1}px)`;
         });
+
+        // === VIDEO AUDIO MANAGEMENT ===
+        const revealVideos = document.querySelectorAll('.final-memories-highlight video');
+        
+        function checkVideoAudio() {
+            let videoHasSound = false;
+            revealVideos.forEach(v => {
+                if (!v.paused && !v.muted && v.volume > 0) {
+                    videoHasSound = true;
+                }
+            });
+            
+            const audio = document.getElementById('bg-music');
+            const btn = document.getElementById('music-fab');
+            
+            if (videoHasSound) {
+                // Temporarily pause bg music
+                audio.pause();
+                btn.textContent = '🎵';
+                btn.classList.remove('playing');
+            } else {
+                // Resume bg music if user wanted it playing
+                if (musicPlaying) {
+                    audio.play().catch(()=>{});
+                    btn.textContent = '🔇';
+                    btn.classList.add('playing');
+                }
+            }
+        }
+
+        revealVideos.forEach(v => {
+            v.addEventListener('play', checkVideoAudio);
+            v.addEventListener('pause', checkVideoAudio);
+            v.addEventListener('volumechange', checkVideoAudio);
+        });
+
     </script>
 </body>
 
