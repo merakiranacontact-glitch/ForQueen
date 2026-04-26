@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only For Shivangi 💖</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CURSOR -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursor-trail"></div>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="pre-heart">💖</div>
+        <div class="pre-text">Loading love...</div>
+        <div class="pre-bar">
+            <div class="pre-fill" id="pre-fill"></div>
+        </div>
+    </div>
+
+    <!-- LOCK SCREEN -->
+    <div id="lock-screen">
+        <canvas id="lock-canvas"></canvas>
+        <div class="lock-card" id="lock-card">
+            <span class="lock-icon">🔐</span>
+            <h1 class="lock-title">Only For Tripshi</h1>
+            <p class="lock-sub">Enter the secret code to enter</p>
+            <div class="dots-row">
+                <div class="dot" id="d0"></div>
+                <div class="dot" id="d1"></div>
+                <div class="dot" id="d2"></div>
+                <div class="dot" id="d3"></div>
+            </div>
+            <div class="keypad">
+                <button class="key" onclick="pressKey('1')">1</button>
+                <button class="key" onclick="pressKey('2')">2</button>
+                <button class="key" onclick="pressKey('3')">3</button>
+                <button class="key" onclick="pressKey('4')">4</button>
+                <button class="key" onclick="pressKey('5')">5</button>
+                <button class="key" onclick="pressKey('6')">6</button>
+                <button class="key" onclick="pressKey('7')">7</button>
+                <button class="key" onclick="pressKey('8')">8</button>
+                <button class="key" onclick="pressKey('9')">9</button>
+                <button class="key" onclick="clearCode()" style="font-size:13px;color:rgba(255,255,255,.4)">CLR</button>
+                <button class="key" onclick="pressKey('0')">0</button>
+                <button class="key" onclick="submitCode()"
+                    style="background:rgba(255,77,109,.2);border-color:var(--rose)">↵</button>
+            </div>
+            <div class="lock-hint">Hint: Think about the day we first met 🌙</div>
+            <div class="lock-error" id="lock-error">Wrong code. Try again, my love 💔</div>
+        </div>
+    </div>
+
+    <!-- MAIN SITE -->
+    <div id="main-site">
+        <canvas id="three-canvas"></canvas>
+
+        <!-- NAV -->
+        <nav>
+            <div class="nav-logo">For You ❤️</div>
+            <ul class="nav-links">
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#memories">Memories</a></li>
+                <li><a href="#message">Message</a></li>
+                <li><a href="#sorry">My Heart</a></li>
+            </ul>
+        </nav>
+
+        <!-- INTRO -->
+        <section id="intro">
+            <div class="intro-content">
+                <div class="intro-line" id="il1">Hey…</div>
+                <div class="intro-line italic" id="il2" style="transition-delay:.5s">I need you to know</div>
+                <div class="intro-line" id="il3" style="transition-delay:1s;font-size:clamp(28px,5vw,52px)">something
+                    important.</div>
+                <div class="intro-sub" id="il-sub">Scroll to read my heart ↓</div>
+            </div>
+            <div class="scroll-hint">
+                <span>scroll</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- STORY SECTION -->
+        <section class="section" id="story">
+            <p class="section-label reveal">Chapter One</p>
+            <h2 class="section-title reveal">Our <span>Beautiful Story</span></h2>
+            <p class="reveal" style="color:rgba(255,255,255,.5);font-size:15px;line-height:1.8;max-width:500px">Every
+                love story is beautiful, but ours is my favourite. Here are the moments I hold closest to my heart…</p>
+
+            <div class="timeline">
+                <div class="t-item reveal">
+                    <div class="t-card">
+                        <span class="t-emoji">💬</span>
+                        <div class="t-date">The Beginning</div>
+                        <div class="t-title">First Hello</div>
+                        <div class="t-desc">The moment you replied and I knew something was different. Your words felt
+                            like home before I even knew what that meant.</div>
+                    </div>
+                    <div class="t-dot"></div>
+                    <div style="flex:1"></div>
+                </div>
+                <div class="t-item reveal" style="transition-delay:.2s">
+                    <div style="flex:1"></div>
+                    <div class="t-dot"></div>
+                    <div class="t-card">
+                        <span class="t-emoji">🌙</span>
+                        <div class="t-date">Late Nights</div>
+                        <div class="t-title">When Time Stopped</div>
+                        <div class="t-desc">Those long conversations where neither of us wanted to say goodbye. Every
+                            second felt precious, like the universe was just for us.</div>
+                    </div>
+                </div>
+                <div class="t-item reveal" style="transition-delay:.4s">
+                    <div class="t-card">
+                        <span class="t-emoji">✨</span>
+                        <div class="t-date">The Moment</div>
+                        <div class="t-title">When I Knew</div>
+                        <div class="t-desc">There was a single moment I realized — you are the person I want beside me.
+                            Not just today. Always.</div>
+                    </div>
+                    <div class="t-dot"></div>
+                    <div style="flex:1"></div>
+                </div>
+                <div class="t-item reveal" style="transition-delay:.6s">
+                    <div style="flex:1"></div>
+                    <div class="t-dot"></div>
+                    <div class="t-card">
+                        <span class="t-emoji">💖</span>
+                        <div class="t-date">Right Now</div>
+                        <div class="t-title">My Favourite Chapter</div>
+                        <div class="t-desc">Every chapter with you is my favourite. And I am not ready for this one to
+                            end.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- GALLERY -->
+        <section class="section" id="memories">
+            <p class="section-label reveal">Chapter Two</p>
+            <h2 class="section-title reveal">Our <span>Memories</span></h2>
+            <p class="reveal" style="color:rgba(255,255,255,.5);font-size:15px;line-height:1.8;max-width:500px">
+                These are the moments that made me fall for you. Every smile, every laugh, every memory
+                is stored in my heart forever. 📸</p>
+
+            <div class="gallery-grid">
+                <div class="photo-card reveal">
+                    <img src="assets/M1.jpeg" alt="Cute Memory 1">
+                    <div class="overlay"><span>Our Sweetest Moment</span></div>
+                </div>
+                <div class="photo-card reveal" style="transition-delay:.1s">
+                    <img src="assets/M2.jpeg" alt="Cute Memory 2">
+                    <div class="overlay"><span>I Love Your Smile</span></div>
+                </div>
+                <div class="photo-card reveal" style="transition-delay:.2s">
+                    <img src="assets/M3.jpeg" alt="Cute Memory 3">
+                    <div class="overlay"><span>Always Together</span></div>
+                </div>
+                <div class="photo-card reveal" style="transition-delay:.3s">
+                    <img src="assets/M4.jpeg" alt="Cute Memory 4">
+                    <div class="overlay"><span>My Whole Heart</span></div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- MESSAGE SECTION -->
+        <section class="section" id="message">
+            <p class="section-label reveal">Chapter Three</p>
+            <h2 class="section-title reveal">From My <span>Heart</span></h2>
+            <div class="msg-block reveal">
+                <p class="msg-text">
+                    There are a thousand things I want to say to you, and words never feel like enough.
+                    But I know this — <strong>you are the most important person in my world.</strong>
+                    The way you laugh, the way you care, the way you make everything feel lighter just by being there.
+                    <br><br>
+                    I know I've made mistakes. I know I've hurt you when I should have held you closer.
+                    <em>And I am truly, deeply sorry for that.</em>
+                    <br><br>
+                    You deserve someone who shows up every single day — not just in words, but in actions.
+                    I want to be that person for you. <strong>I choose you. Every time.</strong>
+                </p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- SORRY SECTION -->
+        <section id="sorry" style="position:relative;z-index:1;padding:120px 20px">
+            <div class="sorry-inner" style="margin:0 auto">
+                <p class="section-label reveal" style="text-align:center">The Truth</p>
+                <h2 class="section-title reveal" style="text-align:center;font-size:clamp(36px,6vw,70px)">I'm
+                    <span>Sorry</span>
+                </h2>
+                <div class="sorry-big reveal" id="sorry-text" style="margin-top:40px">
+                    <strong>I know I hurt you.</strong><br>
+                    I know there were moments you needed me and I wasn't there the way I should have been.<br><br>
+                    <em>I think about it every single day.</em><br><br>
+                    You gave me something rare — your trust, your heart, your time.<br>
+                    And instead of protecting it, I let you down.<br><br>
+                    <strong>That was wrong. And I own it completely.</strong><br><br>
+                    I'm not asking you to forget.<br>
+                    I'm not even asking you to trust me right now.<br><br>
+                    <em>I'm just asking for one more chance</em><br>
+                    to prove that you mean everything to me.<br><br>
+                    Because you do. <strong>You always have.</strong>
+                </div>
+
+                <div class="forgive-wrap reveal" style="text-align:center;margin-top:80px">
+                    <p style="font-size:14px;color:rgba(255,255,255,.4);margin-bottom:24px;letter-spacing:1px">When
+                        you're ready…</p>
+                    <button class="forgive-btn" onclick="onForgive()">
+                        💖 Will You Forgive Me?
+                    </button>
+                    <p style="font-size:12px;color:rgba(255,255,255,.2);margin-top:16px;font-style:italic">No pressure.
+                        I'll wait as long as it takes.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- HEART EXPLOSION -->
+    <div id="explosion"></div>
+
+    <!-- FINAL REVEAL -->
+    <div id="final-reveal">
+        <div class="final-msg-container">
+            <div class="final-memories-highlight">
+                <video src="assets/V1.mp4" autoplay loop muted playsinline controls></video>
+                <video src="assets/V2.mp4" autoplay loop muted playsinline controls></video>
+            </div>
+            <div class="final-heart-glow">💖</div>
+            <div class="final-msg">
+                Shivangi, my beautiful Queen👑❤️...<br><br>
+                Thank you for being in my life. I know I have made mistakes, but please know that
+                <strong>you are the only one I want</strong> beside me, now and forever.<br><br>
+                I promise to love you better, to cherish you more, and to never let you go.
+                You are my world, my happiness, and my <strong>forever love.</strong>
+            </div>
+            <div class="love-signature">Shivangi — Love Forever ❤️✨</div>
+        </div>
+        <button class="final-close" onclick="closeFinal()">Back to Our Story ↩</button>
+    </div>
+
+    <!-- MUSIC FAB -->
+    <button id="music-fab" onclick="toggleMusic()" title="Toggle music">🎵</button>
+
+    <!-- AUDIO (optional - browser autoplay restrictions apply) -->
+    <audio id="bg-music" loop>
+        <source src="assets/Agar Tum Sath Ho(KoshalWorld.Com).mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // === CURSOR ===
+        const cursor = document.getElementById('cursor');
+        const trail = document.getElementById('cursor-trail');
+        let mx = 0, my = 0, tx = 0, ty = 0;
+        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px' });
+        setInterval(() => { tx += (mx - tx) * .12; ty += (my - ty) * .12; trail.style.left = tx + 'px'; trail.style.top = ty + 'px' }, 16);
+
+        // === PRELOADER ===
+        let prog = 0;
+        const fill = document.getElementById('pre-fill');
+        const preInterval = setInterval(() => {
+            prog += Math.random() * 8 + 2;
+            if (prog >= 100) { prog = 100; clearInterval(preInterval); setTimeout(showLock, 400) }
+            fill.style.width = prog + '%';
+        }, 60);
+        function showLock() {
+            document.getElementById('preloader').classList.add('hide');
+            initLockCanvas();
+        }
+
+        // === LOCK CANVAS (floating hearts bg) ===
+        let lockHearts = [];
+        function initLockCanvas() {
+            const c = document.getElementById('lock-canvas');
+            const ctx = c.getContext('2d');
+            c.width = window.innerWidth; c.height = window.innerHeight;
+            for (let i = 0; i < 25; i++) {
+                lockHearts.push({ x: Math.random() * c.width, y: Math.random() * c.height, s: Math.random() * 20 + 8, sp: Math.random() * .5 + .2, o: Math.random() * .4 + .1, drift: Math.random() * 1 - .5 });
+            }
+            function drawHeart(ctx, x, y, s, o) {
+                ctx.save(); ctx.globalAlpha = o; ctx.fillStyle = '#ff4d6d'; ctx.beginPath();
+                ctx.moveTo(x, y); ctx.bezierCurveTo(x, y - s * .3, x - s * .5, y - s * .7, x - s * .5, y - s * .4);
+                ctx.bezierCurveTo(x - s * .5, y - s * .8, x + s * .5, y - s * .8, x + s * .5, y - s * .4);
+                ctx.bezierCurveTo(x + s * .5, y - s * .7, x, y - s * .3, x, y); ctx.fill(); ctx.restore();
+            }
+            function animLock() {
+                if (!document.getElementById('lock-screen').classList.contains('hide')) {
+                    ctx.clearRect(0, 0, c.width, c.height);
+                    lockHearts.forEach(h => {
+                        h.y -= h.sp; h.x += h.drift; h.o += Math.sin(Date.now() * .001) * 0.002;
+                        if (h.y < -50) { h.y = c.height + 50; h.x = Math.random() * c.width }
+                        drawHeart(ctx, h.x, h.y, h.s, Math.max(.05, Math.min(.5, h.o)));
+                    });
+                    requestAnimationFrame(animLock);
+                }
+            }
+            animLock();
+        }
+
+        // === PASSCODE ===
+        const PASS = '1234'; // ← CHANGE THIS to your actual passcode
+        let entered = '';
+        function pressKey(k) {
+            if (entered.length >= 4) return;
+            entered += k;
+            document.getElementById('d' + (entered.length - 1)).classList.add('filled');
+            if (entered.length === 4) setTimeout(submitCode, 200);
+        }
+        function clearCode() {
+            entered = '';
+            for (let i = 0; i < 4; i++)document.getElementById('d' + i).classList.remove('filled');
+            document.getElementById('lock-error').classList.remove('show');
+        }
+        function submitCode() {
+            if (entered === PASS) {
+                document.getElementById('lock-screen').classList.add('hide');
+                const ms = document.getElementById('main-site');
+                ms.classList.add('show');
+                setTimeout(() => {
+                    initThreeJS();
+                    animateIntro();
+                    startFloatingHearts();
+                }, 300);
+            } else {
+                const card = document.getElementById('lock-card');
+                card.classList.add('shake');
+                document.getElementById('lock-error').classList.add('show');
+                setTimeout(() => card.classList.remove('shake'), 400);
+                entered = '';
+                for (let i = 0; i < 4; i++)document.getElementById('d' + i).classList.remove('filled');
+            }
+        }
+        window.addEventListener('keydown', e => {
+            if (document.getElementById('lock-screen').classList.contains('hide')) return;
+            if (e.key >= '0' && e.key <= '9') pressKey(e.key);
+            else if (e.key === 'Backspace') clearCode();
+            else if (e.key === 'Enter') submitCode();
+        });
+
+        // === THREE.JS 3D PARTICLES ===
+        function initThreeJS() {
+            const canvas = document.getElementById('three-canvas');
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, .1, 1000);
+            camera.position.z = 5;
+
+            // Floating particle field
+            const geo = new THREE.BufferGeometry();
+            const N = 2000;
+            const pos = new Float32Array(N * 3), col = new Float32Array(N * 3), sz = new Float32Array(N);
+            const cols = [new THREE.Color('#ff4d6d'), new THREE.Color('#ff8fa3'), new THREE.Color('#ffd6e0'), new THREE.Color('#c9184a')];
+            for (let i = 0; i < N; i++) {
+                pos[i * 3] = (Math.random() - 0.5) * 30;
+                pos[i * 3 + 1] = (Math.random() - 0.5) * 30;
+                pos[i * 3 + 2] = (Math.random() - 0.5) * 20;
+                const c = cols[Math.floor(Math.random() * cols.length)];
+                col[i * 3] = c.r; col[i * 3 + 1] = c.g; col[i * 3 + 2] = c.b;
+                sz[i] = Math.random() * 3 + 1;
+            }
+            geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+            geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+            geo.setAttribute('size', new THREE.BufferAttribute(sz, 1));
+
+            const mat = new THREE.PointsMaterial({ size: .12, vertexColors: true, transparent: true, opacity: .7, sizeAttenuation: true });
+            const points = new THREE.Points(geo, mat);
+            scene.add(points);
+
+            // Orbiting ring
+            const ringGeo = new THREE.TorusGeometry(3, .015, 8, 100);
+            const ringMat = new THREE.MeshBasicMaterial({ color: '#ff4d6d', transparent: true, opacity: .3 });
+            const ring = new THREE.Mesh(ringGeo, ringMat);
+            scene.add(ring);
+            const ring2 = new THREE.TorusGeometry(4.5, .01, 8, 100);
+            const ring2Mesh = new THREE.Mesh(new THREE.TorusGeometry(4.5, .008, 8, 120), new THREE.MeshBasicMaterial({ color: '#ff8fa3', transparent: true, opacity: .15 }));
+            scene.add(ring2Mesh);
+
+            let mouseX = 0, mouseY = 0;
+            document.addEventListener('mousemove', e => { mouseX = (e.clientX / innerWidth - 0.5) * 2; mouseY = -(e.clientY / innerHeight - 0.5) * 2; });
+            window.addEventListener('resize', () => {
+                camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix();
+                renderer.setSize(innerWidth, innerHeight);
+            });
+
+            let t = 0;
+            function animate() {
+                requestAnimationFrame(animate);
+                t += .005;
+                points.rotation.y = t * .1;
+                points.rotation.x = t * .05;
+                ring.rotation.x = t * .3; ring.rotation.y = t * .2;
+                ring2Mesh.rotation.x = -t * .2; ring2Mesh.rotation.z = t * .15;
+                camera.position.x += (mouseX * .5 - camera.position.x) * .03;
+                camera.position.y += (mouseY * .5 - camera.position.y) * .03;
+                camera.lookAt(scene.position);
+                const positions = geo.attributes.position.array;
+                for (let i = 1; i < N * 3; i += 3) { positions[i] += Math.sin(t + i) * .002; }
+                geo.attributes.position.needsUpdate = true;
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+
+        // === INTRO ANIMATION ===
+        function animateIntro() {
+            const lines = ['il1', 'il2', 'il3'];
+            lines.forEach((id, i) => {
+                setTimeout(() => document.getElementById(id).classList.add('visible'), 300 + i * 600);
+            });
+            setTimeout(() => document.getElementById('il-sub').classList.add('visible'), 2200);
+        }
+
+        // === SCROLL REVEAL ===
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: .12, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // === FLOATING HEARTS ===
+        function startFloatingHearts() {
+            setInterval(() => {
+                const h = document.createElement('div');
+                h.className = 'float-heart';
+                h.textContent = ['💖', '💕', '❤️', '🌹', '💗', '✨'][Math.floor(Math.random() * 6)];
+                h.style.left = Math.random() * 100 + 'vw';
+                h.style.bottom = '-30px';
+                h.style.fontSize = (12 + Math.random() * 16) + 'px';
+                h.style.setProperty('--drift', (Math.random() * 80 - 40) + 'px');
+                h.style.animationDuration = (6 + Math.random() * 8) + 's';
+                h.style.opacity = Math.random() * .5 + .2;
+                document.body.appendChild(h);
+                setTimeout(() => h.remove(), 14000);
+            }, 2000);
+        }
+
+        // === FORGIVE BUTTON ===
+        function onForgive() {
+            triggerExplosion();
+            setTimeout(() => {
+                const fr = document.getElementById('final-reveal');
+                fr.classList.add('show');
+                setTimeout(() => fr.classList.add('visible'), 50);
+            }, 1800);
+        }
+        function triggerExplosion() {
+            const exp = document.getElementById('explosion');
+            exp.style.display = 'block';
+            const cx = window.innerWidth / 2, cy = window.innerHeight / 2;
+            for (let i = 0; i < 60; i++) {
+                setTimeout(() => {
+                    const h = document.createElement('div');
+                    h.className = 'exp-heart';
+                    h.textContent = ['💖', '💕', '❤️', '💗', '🌹', '✨', '⭐'][Math.floor(Math.random() * 7)];
+                    const angle = Math.random() * 360;
+                    const dist = 100 + Math.random() * 300;
+                    const dx = Math.cos(angle * Math.PI / 180) * dist;
+                    const dy = Math.sin(angle * Math.PI / 180) * dist;
+                    h.style.left = cx + 'px'; h.style.top = cy + 'px';
+                    h.style.setProperty('--tx', `translate(${dx}px,${dy}px)`);
+                    h.style.animationDelay = Math.random() * .4 + 's';
+                    exp.appendChild(h);
+                    setTimeout(() => h.remove(), 2500);
+                }, i * 30);
+            }
+            setTimeout(() => exp.style.display = 'none', 3500);
+        }
+        function closeFinal() {
+            const fr = document.getElementById('final-reveal');
+            fr.classList.remove('visible');
+            setTimeout(() => fr.classList.remove('show'), 1000);
+        }
+
+        // === MUSIC ===
+        let musicPlaying = false;
+        function toggleMusic() {
+            const audio = document.getElementById('bg-music');
+            const btn = document.getElementById('music-fab');
+            if (musicPlaying) { audio.pause(); btn.textContent = '🎵'; btn.classList.remove('playing'); }
+            else { audio.play().catch(() => { }); btn.textContent = '🔇'; btn.classList.add('playing'); }
+            musicPlaying = !musicPlaying;
+        }
+
+        // === PARALLAX SCROLL ===
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            const canvas = document.getElementById('three-canvas');
+            if (canvas) canvas.style.transform = `translateY(${y * .1}px)`;
+        });
+    </script>
+</body>
+
+</html>
